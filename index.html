@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Distribuidora F.J.M</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CABECERA FIJA: Título + Menú + Búsqueda -->
+  <header class="main-header">
+    <div class="header-container">
+      <h1 class="site-title">Distribuidora F.J.M</h1>
+
+      <!-- ✅ Botón móvil con ID corregido -->
+      <button id="mobileNavToggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="categoryNav">
+        ☰ Categorías
+      </button>
+    </div>
+
+    <!-- Navegación de categorías -->
+    <nav class="category-nav" id="categoryNav" role="navigation" aria-label="Categorías">
+      <a href="#hogar">Hogar</a>
+      <a href="#ferreteria">Ferretería</a>
+      <a href="#automotriz">Automotriz</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a class="menu-contact-link" id="contactLink">Contacto</a>
+    </nav>
+
+    <!-- Barra de búsqueda -->
+    <section class="search-bar" role="search">
+      <div class="search-wrapper">
+        <input type="text" id="productSearch" placeholder="Buscar producto..." aria-label="Buscar producto" />
+        <button id="searchButton" aria-label="Buscar" type="button">🔍</button>
+      </div>
+    </section>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="mainContent" tabindex="-1">
+    <section id="hogar">
+      <h2 class="category-title">Hogar</h2>
+      <div id="contenido-hogar" class="products-container"></div>
+    </section>
+
+    <section id="ferreteria">
+      <h2 class="category-title">Ferretería</h2>
+      <div id="contenido-ferreteria" class="products-container"></div>
+    </section>
+
+    <section id="automotriz">
+      <h2 class="category-title">Automotriz</h2>
+      <div id="contenido-automotriz" class="products-container"></div>
+    </section>
+
+    <section id="tecnologia">
+      <h2 class="category-title">Tecnología</h2>
+      <div id="contenido-tecnologia" class="products-container"></div>
+    </section>
+  </main>
+
+  <!-- MODAL DE CONTACTO -->
+  <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" style="display:none;">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="Cerrar modal">❌</button>
+      <h3 id="contactModalTitle">Contáctenos</h3>
+      <ul>
+        <li>📞 8964-8009</li>
+        <li>📞 8714-1372</li>
+        <li>📞 8615-3908</li>
+        <li>✉️ <a href="mailto:adm.fjm@gmail.com">adm.fjm@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Tienda Distribuidora F.J.M - Todos los derechos reservados<br />
+    <small>Nuestro catálogo está en constante actualización.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

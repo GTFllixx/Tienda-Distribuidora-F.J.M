@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (searchInput) {
     searchInput.addEventListener("input", filterProducts);
-
     searchInput.addEventListener("keydown", e => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -104,11 +103,23 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.text();
       })
       .then(html => {
-        document.getElementById(id).innerHTML = html;
-        updateProductCards();
+        const container = document.getElementById(id);
+        container.innerHTML = html;
+
+        // Mostrar solo los primeros 3 productos
+        const cards = container.querySelectorAll(".product-card");
+        cards.forEach((card, index) => {
+          if (index >= 3) {
+            card.style.display = "none";
+          }
+        });
+
+        updateProductCards(); // Actualizar para el buscador
+
       })
       .catch(error => {
         console.error(`Error cargando ${file}:`, error);
+        document.getElementById(id).innerHTML = `<p style="color:red;">Error al cargar productos de esta categoría.</p>`;
       });
   }
 
@@ -116,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadCategoryContent("contenido-ferreteria", "categorias/ferreteria.html");
   loadCategoryContent("contenido-automotriz", "categorias/automotriz.html");
   loadCategoryContent("contenido-tecnologia", "categorias/tecnologia.html");
+  loadCategoryContent("contenido-terminales", "categorias/terminales.html");
 
   // 🎯 Compactar barra de búsqueda al hacer scroll
   const searchBar = document.querySelector(".search-bar");
@@ -127,6 +139,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ❌ Ya no necesitamos ajustar dinámicamente el margin-top del main
-  // porque se maneja directamente en CSS con `margin-top: 180px`
+  // 🔁 Mostrar/ocultar productos con botón Ver más / Ver menos
+  const toggleButtons = document.querySelectorAll(".toggle-category-btn");
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const container = document.getElementById(targetId);
+      const allCards = container.querySelectorAll(".product-card");
+      const hiddenCards = Array.from(allCards).filter(card => card.style.display === "none");
+
+      if (hiddenCards.length > 0) {
+        allCards.forEach(card => card.style.display = "block");
+        btn.textContent = "Ver menos";
+      } else {
+        allCards.forEach((card, index) => {
+          card.style.display = index < 3 ? "block" : "none";
+        });
+        btn.textContent = "Ver más";
+      }
+    });
+  });
 });

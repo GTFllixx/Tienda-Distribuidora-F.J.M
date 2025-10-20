@@ -367,3 +367,24 @@ footer {
     width: 100%;
   }
 }
+
+/* ------------------------ TOGGLE CATEGORY BUTTON ------------------------ */
+.toggle-category-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toggle-category-btn:hover {
+  background-color: #2563eb;
+}
+

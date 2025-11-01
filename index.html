@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🧠 SEO -->
+  <meta name="description" content="Distribuidora F.J.M - Tienda virtual de hogar, ferretería, automotriz y tecnología. Productos al por mayor y detalle en Costa Rica.">
+  <meta name="keywords" content="ferretería, hogar, tecnología, automotriz, distribuidora, herramientas, electrodomésticos, Costa Rica">
+  <meta name="author" content="Distribuidora F.J.M">
+  <meta property="og:title" content="Distribuidora F.J.M - Tienda Virtual">
+  <meta property="og:description" content="Encuentra productos de ferretería, hogar y tecnología al mejor precio.">
+  <meta property="og:image" content="imagenes/vista.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <title>Tienda Distribuidora F.J.M</title>
+  <link rel="icon" href="imagenes/favicon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- CABECERA FIJA -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <img src="imagenes/vista.png" alt="Logo de Distribuidora F.J.M" class="site-logo" />
+
+      <h1 class="site-title">Distribuidora F.J.M</h1>
+
+      <!-- Botón móvil -->
+      <button id="mobileNavToggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="categoryNav">
+        ☰ Categorías
+      </button>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="category-nav" id="categoryNav" role="navigation" aria-label="Categorías">
+      <a href="#hogar">Hogar</a>
+      <a href="#ferreteria">Ferretería</a>
+      <a href="#automotriz">Automotriz</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#terminales">Terminales</a>
+      <a class="menu-contact-link" id="contactLink">Contacto</a>
+    </nav>
+
+    <!-- Barra de búsqueda -->
+    <section class="search-bar" role="search">
+      <div class="search-wrapper">
+        <input type="text" id="productSearch" placeholder="Buscar producto..." aria-label="Buscar producto" />
+        <button id="searchButton" aria-label="Buscar" type="button">🔍</button>
+      </div>
+    </section>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="mainContent" tabindex="-1">
+
+    <section id="hogar">
+      <h2 class="category-title">Hogar</h2>
+      <div id="contenido-hogar" class="products-container"></div>
+      <button class="toggle-category-btn" data-target="contenido-hogar">Ver más</button>
+    </section>
+
+    <section id="ferreteria">
+      <h2 class="category-title">Ferretería</h2>
+      <div id="contenido-ferreteria" class="products-container"></div>
+      <button class="toggle-category-btn" data-target="contenido-ferreteria">Ver más</button>
+    </section>
+
+    <section id="automotriz">
+      <h2 class="category-title">Automotriz</h2>
+      <div id="contenido-automotriz" class="products-container"></div>
+      <button class="toggle-category-btn" data-target="contenido-automotriz">Ver más</button>
+    </section>
+
+    <section id="tecnologia">
+      <h2 class="category-title">Tecnología</h2>
+      <div id="contenido-tecnologia" class="products-container"></div>
+      <button class="toggle-category-btn" data-target="contenido-tecnologia">Ver más</button>
+    </section>
+
+    <section id="terminales">
+      <h2 class="category-title">Terminales</h2>
+      <div id="contenido-terminales" class="products-container"></div>
+      <button class="toggle-category-btn" data-target="contenido-terminales">Ver más</button>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE CONTACTO -->
+  <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" style="display:none;">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="Cerrar modal">❌</button>
+      <h3 id="contactModalTitle">Contáctenos</h3>
+      <ul>
+        <li>📞 8964-8009</li>
+        <li>📞 8714-1372</li>
+        <li>📞 8615-3908</li>
+        <li>✉️ <a href="mailto:adm.fjm@gmail.com">adm.fjm@gmail.com</a></li>
+        <li>💬 <a href="https://wa.me/50689648009" target="_blank">Chatear por WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader" style="display:none;">Cargando productos...</div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Tienda Distribuidora F.J.M - Todos los derechos reservados<br />
+    <small>Nuestro catálogo está en constante actualización.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
